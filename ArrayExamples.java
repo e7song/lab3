@@ -29,15 +29,27 @@ public class ArrayExamples {
   // lowest number when calculating. Returns 0 if there are no elements or just
   // 1 element in the array
   static double averageWithoutLowest(double[] arr) {
+    //edge case, 1 element in array
     if(arr.length < 2) { return 0.0; }
+
+    //finds the lowest value
     double lowest = arr[0];
     for(double num: arr) {
       if(num < lowest) { lowest = num; }
     }
+
+    //sums everything
     double sum = 0;
+    boolean excluded = false;
     for(double num: arr) {
-      if(num != lowest) { sum += num; }
+      //excludes the lowest value once
+      if (num == lowest && excluded == false) {
+        excluded = true;
+        continue;
+      }
+      sum += num;
     }
+    //returns average
     return sum / (arr.length - 1);
   }
 
