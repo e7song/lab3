@@ -1,4 +1,7 @@
 import static org.junit.Assert.*;
+
+import java.lang.reflect.Array;
+
 import org.junit.*;
 
 public class ArrayTests {
@@ -16,6 +19,8 @@ public class ArrayTests {
   @Test
   public void testReversed() {
     int[] input1 = { };
+    int[] input2 = {1, 2, 3, 4, 5};
     assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
+    assertArrayEquals(new int[]{5, 4, 3, 2, 1}, ArrayExamples.reversed(input2));
   }
 }
