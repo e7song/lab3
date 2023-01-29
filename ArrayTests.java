@@ -16,9 +16,10 @@ public class ArrayTests {
     ArrayExamples.reverseInPlace(input3);
     assertArrayEquals(new int[]{1, 3, 5, 3, 1}, input3);
 
-    int[] input4 = {1, 3, 5};
+    int[] input4 = {1, 2, 2, 1};
     ArrayExamples.reverseInPlace(input4);
-    assertArrayEquals(new int[] {5, 3, 5}, input4);
+    assertArrayEquals(new int[] {1, 2, 2, 1}, input4);
+
 
     
 	}
