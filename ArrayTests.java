@@ -20,6 +20,14 @@ public class ArrayTests {
     ArrayExamples.reverseInPlace(input4);
     assertArrayEquals(new int[] {1, 2, 2, 1}, input4);
 
+    //faiure inducing
+    int[] input5 = {1, 2, 3, 4, 5};
+    ArrayExamples.reverseInPlace(input5);
+    assertArrayEquals(new int[] {5, 4, 3, 2, 1}, input5);
+
+    int[] input6 = {1, 3, 5, 2};
+    ArrayExamples.reverseInPlace(input6);
+    assertArrayEquals(new int[] {2, 5, 3, 1}, input6);
 
     
 	}
@@ -29,5 +37,17 @@ public class ArrayTests {
   public void testReversed() {
     int[] input1 = { };
     assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
+  }
+
+  @Test
+  public void testAverageWithoutLowest() {
+    double[] input1 = {1, 2, 3, 4, 5, 6};
+    assertEquals(4.0, 
+        ArrayExamples.averageWithoutLowest(input1), 0.001);
+
+    double[] input2 = {1, 1, 2, 3, 4, 5, 6};
+    assertEquals(4.0, 
+        ArrayExamples.averageWithoutLowest(input2), 0.001);
+    
   }
 }
